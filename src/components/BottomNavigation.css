@@ -1,0 +1,97 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: none; /* Hidden on desktop */
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  border-top: 1px solid var(--glass-border);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  padding: 0 10px 10px 10px; /* Leave space for home indicator */
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Show only on mobile screens */
+@media (max-width: 768px) {
+  .bottom-nav {
+    display: flex;
+  }
+}
+
+.bottom-nav-item {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--text-secondary));
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  height: 100%;
+  position: relative;
+  outline: none;
+}
+
+.bottom-nav-item:active {
+  transform: scale(0.95);
+}
+
+.bottom-nav-item.active {
+  color: hsl(var(--primary));
+}
+
+.bottom-nav-icon {
+  font-size: 1.35rem;
+  margin-bottom: 4px;
+  transition: transform 0.2s ease;
+}
+
+.bottom-nav-item.active .bottom-nav-icon {
+  transform: translateY(-2px) scale(1.1);
+}
+
+.bottom-nav-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Badge styling */
+.bottom-nav-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-nav-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #f43f5e; /* Vibrant coral red */
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 1.5px solid hsl(var(--bg-secondary));
+  box-shadow: 0 2px 5px rgba(244, 63, 94, 0.4);
+}
+
+
